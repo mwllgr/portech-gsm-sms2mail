@@ -10,7 +10,7 @@ from email.utils import formataddr, formatdate, make_msgid
 from email.message import EmailMessage
 import smtplib
 
-HOST = "10.0.0.77"
+HOST = "192.168.0.10"
 PORT = 23
 USERNAME = "AzureDiamond"
 PASSWORD = "******"
@@ -131,7 +131,7 @@ def send_email(message):
         body_content += "<b>Zeitstempel:</b> {0}<br>".format(decoded["scts"])
         body_content += "<b>SMS-Zentrale:</b> {0}</p>".format(decoded["smsc"]["number"])
 
-        body_footer = "<hr><small style='font-weight: bold'>Technische Gesamtzusammenfassung:</small><pre style='font-size: 7pt'>" + pprint.pformat(messages) + "</pre>"
+        body_footer = "<hr><small style='font-weight: bold'>Technische Gesamtzusammenfassung:</small><pre style='font-size: 7pt'>" + pprint.pformat(message) + "</pre>"
         email.set_content(body_header + body_content + body_footer, subtype="html")
 
         smtp = smtplib.SMTP_SSL(MAIL_HOST)
