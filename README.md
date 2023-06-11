@@ -3,3 +3,6 @@ This simple script tries to load all unread SMS messages from the GSM gateway vi
 
 ## Configuration
 Make sure to adjust the constants at the beginning of the Python file. This script - by default - checks both inserted SIM cards (they're called "modules" in the script) for new messages.
+
+## Known working devices
+- Portech MV-372 Dual-SIM GSM VoIP Gateway
